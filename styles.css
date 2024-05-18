@@ -1,0 +1,897 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.myNav {
+  background-color: #ffffff44;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  z-index: 10;
+
+
+  a {
+    padding: .5rem 1rem;
+    text-decoration: none;
+    color: white;
+
+
+    &:hover {
+      background-color: #00ffff88;
+    }
+  }
+}
+
+.bloque-50-vh {
+  min-height: 50vh;
+}
+
+.firstBlock {
+  background-image: url('fotos_with_reference_AVIF/img-2.avif');
+  background-size: cover;
+  background-position: center;
+}
+
+.secondBlock {
+  text-align: center;
+  align-content: center;
+  background-image: linear-gradient(-45deg, lightblue, lightyellow, lightgreen);
+
+  * {
+    width: 70%;
+    margin-inline: auto;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+
+.thirdBlock {
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .thirdBlock-left-top,
+  .thirdBlock-right-top,
+  .thirdBlock-left-bottom,
+  .thirdBlock-right-bottom {
+    height: 50vh;
+    flex: 50%;
+    position: relative;
+    z-index: -5;
+    display: flex;
+
+    .left,
+    .right {
+      flex-basis: 50%;
+    }
+
+    .left {
+      display: flex;
+      flex-wrap: wrap;
+      place-content: center;
+    }
+
+    .right {
+      padding: 2rem;
+
+      table {
+        width: 100%;
+        height: 100%;
+        border-collapse: collapse;
+      }
+
+      tr {
+        border: 3px solid black;
+        padding: .5rem;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      tr td:nth-child(2) {
+        border-left: 3px solid black;
+      }
+    }
+  }
+
+  .thirdBlock-left-top {
+    .left {
+      .loader {
+        position: relative;
+        width: 240px;
+        height: 240px;
+        border: 8px solid #282828;
+        overflow: hidden;
+        border-radius: 50%;
+        box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.1),
+          10px 10px 10px rgba(0, 0, 0, 0.4),
+          inset -5px -5px 5px rgba(255, 255, 255, 0.2),
+          inset 10px 10px 10px rgba(0, 0, 0, 0.4);
+      }
+
+      .loader:before {
+        content: "";
+        position: absolute;
+        inset: 40px;
+        z-index: 10;
+        background: #212121;
+        border-radius: 50%;
+        border: 2px solid #292929;
+        box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.2),
+          inset 3px 3px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      .loader span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        z-index: -1;
+        animation: animate 0.5s linear infinite;
+        filter: blur(20px);
+      }
+
+      .loader span {
+        background-image: linear-gradient(-225deg,
+            lime 0%,
+            violet 50%,
+            cyan 100%);
+      }
+    }
+  }
+
+  .thirdBlock-right-top {
+    .left {
+
+      .spinner {
+        background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
+        width: 250px;
+        height: 250px;
+        animation: spinning82341 1.7s linear infinite;
+        text-align: center;
+        border-radius: 50%;
+        filter: blur(1px);
+        box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+      }
+
+      .spinner1 {
+        background-color: rgb(36, 36, 36);
+        width: 230px;
+        height: 230px;
+        border-radius: 50%;
+        filter: blur(10px);
+      }
+
+
+    }
+  }
+
+  .thirdBlock-left-bottom {
+    .left {
+
+      .loader1 {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        background: #00000088;
+        border-radius: 50%;
+        box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.55);
+        border: 1px solid #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .loader1::before {
+        content: '';
+        position: absolute;
+        inset: 20px;
+        background: transparent;
+        border: 1px dashed#444;
+        border-radius: 50%;
+        box-shadow: inset -5px -5px 25px rgba(0, 0, 0, 0.25),
+          inset 5px 5px 35px rgba(0, 0, 0, 0.25);
+      }
+
+      .loader1::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px dashed#444;
+        box-shadow: inset -5px -5px 25px rgba(0, 0, 0, 0.25),
+          inset 5px 5px 35px rgba(0, 0, 0, 0.25);
+      }
+
+      .loader1 span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        background: transparent;
+        transform-origin: top left;
+        animation: radar81 2s linear infinite;
+        border-top: 1px dashed #fff;
+      }
+
+      .loader1 span::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: seagreen;
+        transform-origin: top left;
+        transform: rotate(-55deg);
+        filter: blur(30px) drop-shadow(20px 20px 20px seagreen);
+      }
+    }
+  }
+
+  .thirdBlock-right-bottom {
+    .left {
+      .wheel-and-hamster {
+        --dur: 1s;
+        position: relative;
+        width: 250px;
+        height: 250px;
+        font-size: 14px;
+      }
+
+      .wheel,
+      .hamster,
+      .hamster div,
+      .spoke {
+        position: absolute;
+      }
+
+      .wheel,
+      .spoke {
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .wheel {
+        background: radial-gradient(100% 100% at center, hsla(0, 0%, 60%, 0) 47.8%, hsl(0, 0%, 60%) 48%);
+        z-index: 2;
+      }
+
+      .hamster {
+        animation: hamster var(--dur) ease-in-out infinite;
+        top: 67%;
+        left: calc(50% - 3.5em);
+        width: 7em;
+        height: 3.75em;
+        transform: rotate(4deg) translate(-0.8em, 1.85em);
+        transform-origin: 50% 0;
+        z-index: 1;
+      }
+
+      .hamster__head {
+        animation: hamsterHead var(--dur) ease-in-out infinite;
+        background: hsl(30, 90%, 55%);
+        border-radius: 70% 30% 0 100% / 40% 25% 25% 60%;
+        box-shadow: 0 -0.25em 0 hsl(30, 90%, 80%) inset,
+          0.75em -1.55em 0 hsl(30, 90%, 90%) inset;
+        top: 0;
+        left: -2em;
+        width: 2.75em;
+        height: 2.5em;
+        transform-origin: 100% 50%;
+      }
+
+      .hamster__ear {
+        animation: hamsterEar var(--dur) ease-in-out infinite;
+        background: hsl(0, 90%, 85%);
+        border-radius: 50%;
+        box-shadow: -0.25em 0 hsl(30, 90%, 55%) inset;
+        top: -0.25em;
+        right: -0.25em;
+        width: 0.75em;
+        height: 0.75em;
+        transform-origin: 50% 75%;
+      }
+
+      .hamster__eye {
+        animation: hamsterEye var(--dur) linear infinite;
+        background-color: hsl(0, 0%, 0%);
+        border-radius: 50%;
+        top: 0.375em;
+        left: 1.25em;
+        width: 0.5em;
+        height: 0.5em;
+      }
+
+      .hamster__nose {
+        background: hsl(0, 90%, 75%);
+        border-radius: 35% 65% 85% 15% / 70% 50% 50% 30%;
+        top: 0.75em;
+        left: 0;
+        width: 0.2em;
+        height: 0.25em;
+      }
+
+      .hamster__body {
+        animation: hamsterBody var(--dur) ease-in-out infinite;
+        background: hsl(30, 90%, 90%);
+        border-radius: 50% 30% 50% 30% / 15% 60% 40% 40%;
+        box-shadow: 0.1em 0.75em 0 hsl(30, 90%, 55%) inset,
+          0.15em -0.5em 0 hsl(30, 90%, 80%) inset;
+        top: 0.25em;
+        left: 2em;
+        width: 4.5em;
+        height: 3em;
+        transform-origin: 17% 50%;
+        transform-style: preserve-3d;
+      }
+
+      .hamster__limb--fr,
+      .hamster__limb--fl {
+        clip-path: polygon(0 0, 100% 0, 70% 80%, 60% 100%, 0% 100%, 40% 80%);
+        top: 2em;
+        left: 0.5em;
+        width: 1em;
+        height: 1.5em;
+        transform-origin: 50% 0;
+      }
+
+      .hamster__limb--fr {
+        animation: hamsterFRLimb var(--dur) linear infinite;
+        background: linear-gradient(hsl(30, 90%, 80%) 80%, hsl(0, 90%, 75%) 80%);
+        transform: rotate(15deg) translateZ(-1px);
+      }
+
+      .hamster__limb--fl {
+        animation: hamsterFLLimb var(--dur) linear infinite;
+        background: linear-gradient(hsl(30, 90%, 90%) 80%, hsl(0, 90%, 85%) 80%);
+        transform: rotate(15deg);
+      }
+
+      .hamster__limb--br,
+      .hamster__limb--bl {
+        border-radius: 0.75em 0.75em 0 0;
+        clip-path: polygon(0 0, 100% 0, 100% 30%, 70% 90%, 70% 100%, 30% 100%, 40% 90%, 0% 30%);
+        top: 1em;
+        left: 2.8em;
+        width: 1.5em;
+        height: 2.5em;
+        transform-origin: 50% 30%;
+      }
+
+      .hamster__limb--br {
+        animation: hamsterBRLimb var(--dur) linear infinite;
+        background: linear-gradient(hsl(30, 90%, 80%) 90%, hsl(0, 90%, 75%) 90%);
+        transform: rotate(-25deg) translateZ(-1px);
+      }
+
+      .hamster__limb--bl {
+        animation: hamsterBLLimb var(--dur) linear infinite;
+        background: linear-gradient(hsl(30, 90%, 90%) 90%, hsl(0, 90%, 85%) 90%);
+        transform: rotate(-25deg);
+      }
+
+      .hamster__tail {
+        animation: hamsterTail var(--dur) linear infinite;
+        background: hsl(0, 90%, 85%);
+        border-radius: 0.25em 50% 50% 0.25em;
+        box-shadow: 0 -0.2em 0 hsl(0, 90%, 75%) inset;
+        top: 1.5em;
+        right: -0.5em;
+        width: 1em;
+        height: 0.5em;
+        transform: rotate(30deg) translateZ(-1px);
+        transform-origin: 0.25em 0.25em;
+      }
+
+      .spoke {
+        animation: spoke var(--dur) linear infinite;
+        background: radial-gradient(100% 100% at center, hsl(0, 0%, 60%) 4.8%, hsla(0, 0%, 60%, 0) 5%),
+          linear-gradient(hsla(0, 0%, 55%, 0) 46.9%, hsl(0, 0%, 65%) 47% 52.9%, hsla(0, 0%, 65%, 0) 53%) 50% 50% / 99% 99% no-repeat;
+      }
+
+
+    }
+  }
+
+  .thirdBlock-left-top,
+  .thirdBlock-right-top {
+    background-color: violet;
+
+    .right {
+      background-color: lightblue;
+    }
+  }
+
+  .thirdBlock-left-bottom,
+  .thirdBlock-right-bottom {
+    background-color: lightblue;
+
+    .right {
+      background-color: violet;
+    }
+  }
+
+
+}
+
+
+.contact  {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+
+  .contact-left,
+  .contact-right {
+    flex-basis: 50%;
+  }
+
+  .contact-left {
+    background-color: #04aa6d;
+    padding: 2rem;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .contact-right {
+    background-image: radial-gradient(circle closest-side, black, white, green);
+    align-content: center;
+
+    form {
+      width: 70%;
+      height: max-content;
+      background-color: #04aa6d;
+      margin-inline: auto;
+      padding: 1.25rem;
+      border-radius: 30px;
+
+      legend {
+        text-align: center;
+      }
+
+      * {
+        width: 100%;
+        margin-bottom: .5rem;
+        font-family: cursive;
+      }
+
+      input, textarea {
+        padding: .5rem;
+        outline: none;
+        border: none;
+      }
+
+      input[type=reset] {
+        width: 50%;
+        margin-inline: auto;
+        border-radius: 999px;
+        display: block;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+/* ====================== KEYFRAMES ================== */
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinning82341 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes radar81 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animations */
+@keyframes hamster {
+
+  from,
+  to {
+    transform: rotate(4deg) translate(-0.8em, 1.85em);
+  }
+
+  50% {
+    transform: rotate(0) translate(-0.8em, 1.85em);
+  }
+}
+
+@keyframes hamsterHead {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(0);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes hamsterEye {
+
+  from,
+  90%,
+  to {
+    transform: scaleY(1);
+  }
+
+  95% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes hamsterEar {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(0);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes hamsterBody {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(0);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes hamsterFRLimb {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(50deg) translateZ(-1px);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(-30deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterFLLimb {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(-30deg);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(50deg);
+  }
+}
+
+@keyframes hamsterBRLimb {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(-60deg) translateZ(-1px);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(20deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterBLLimb {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(20deg);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes hamsterTail {
+
+  from,
+  25%,
+  50%,
+  75%,
+  to {
+    transform: rotate(30deg) translateZ(-1px);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotate(10deg) translateZ(-1px);
+  }
+}
+
+@keyframes spoke {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-1turn);
+  }
+}
+
+/* ====================== MEDIA QUERIES ================== */
+
+@media (width <=1200px) {
+
+  .firstBlock,
+  .secondBlock {
+    height: 100vh;
+  }
+
+  html {
+    font-size: 14px;
+  }
+
+  .secondBlock {
+    padding: 1.2rem;
+
+    * {
+      width: 90%;
+    }
+  }
+
+  .thirdBlock {
+    .thirdBlock-left-top {
+      .left {
+        .loader {
+          width: 190px;
+          height: 190px;
+        }
+      }
+    }
+
+    .thirdBlock-right-top {
+      .left {
+        .spinner {
+          width: 190px;
+          height: 190px;
+        }
+        .spinner1 {
+          width: 160px;
+          height: 160px;
+        }
+      }
+    }
+
+    .thirdBlock-left-bottom {
+      .left {
+        .loader1 {
+          width: 190px;
+          height: 190px;
+        }
+      }
+    }
+
+    .thirdBlock-right-bottom {
+      .left {
+        .wheel-and-hamster {
+          width: 190px;
+          height: 190px;
+        }
+        .hamster {
+          top: 58%;
+        }
+      }
+    }
+  }
+
+
+}
+
+@media (width <= 900px) {
+  
+.thirdBlock {
+  .thirdBlock-left-top,
+  .thirdBlock-right-top,
+  .thirdBlock-left-bottom,
+  .thirdBlock-right-bottom {
+    flex: 100%;
+    height: max-content;
+  }
+
+  .thirdBlock-left-bottom {
+    order: 1;
+  }
+  .thirdBlock-right-top {
+    order: 2;
+  }
+  .thirdBlock-right-bottom {
+    order: 3;
+  }
+}
+
+.contact {
+  flex-direction: column;
+
+
+
+  .contact-left {
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .contact-right {
+    flex-grow: 1;
+    flex-basis: 70%;
+    padding: 14rem;
+  
+    form {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+}
+
+@media (width <= 500px) and (orientation: portrait) {
+  .thirdBlock {
+    .thirdBlock-left-top,
+    .thirdBlock-right-top,
+    .thirdBlock-left-bottom,
+    .thirdBlock-right-bottom {
+      flex: 100%;
+      min-height: 100vh;
+      flex-direction: column;
+      order: 0;
+      
+
+      .left {
+        flex-grow: 1;
+      }
+    }
+
+    .thirdBlock-left-top {
+      .right {
+        background-color: violet;
+      }
+    }
+
+    .thirdBlock-right-top {
+      .left {
+        background-color: lightblue;
+      }
+    }
+
+    .thirdBlock-left-bottom {
+      .left {
+        background-color: violet;
+      }
+    }
+
+    .thirdBlock-right-bottom {
+      .right {
+        background-color: lightblue;
+      }
+    }
+  }
+
+  
+.contact {
+  flex-direction: column;
+
+
+
+  .contact-left {
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .contact-right {
+    flex-grow: 1;
+    flex-basis: 70%;
+    padding: 4.8rem;
+  
+    form {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+}
